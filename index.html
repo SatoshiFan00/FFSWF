@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFSWF Family & Friends Savings and Wealth Fund</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #090b12;
+            color: #f3e2a9;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 40px;
+            background: linear-gradient(180deg, #121930 0%, #0f1622 100%);
+            border-bottom: 1px solid #3a4256;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .logo-image {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid #7c6b2d;
+            background-color: #131823;
+        }
+        .brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: #f8d05f;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .request-access, .buy-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #c6a33f 0%, #ae8c1b 100%);
+            color: #11101a;
+            text-decoration: none;
+            border: 1px solid #e3c568;
+            padding: 14px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(174, 140, 27, 0.3);
+            transition: all 200ms ease;
+            letter-spacing: 0.3px;
+        }
+        .request-access:hover, .buy-link:hover {
+            background: linear-gradient(135deg, #d4b34a 0%, #a8821a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(174, 140, 27, 0.4);
+        }
+        .banner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+            margin: 0;
+            max-width: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            background-image: url("https://images.pump.fun/coin-banner/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump?variant=1500x500&ipfs=bafybeif7nsljze3kny2ictvsmc6octqk5h4sq24e6an3lmx5onya5whsqm&src=https%3A%2F%2Fipfs.io%2Fipfs%2Fbafybeif7nsljze3kny2ictvsmc6octqk5h4sq24e6an3lmx5onya5whsqm");
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 -80px 120px rgba(0, 0, 0, 0.5);
+        }
+        .banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(8, 11, 18, 0.28), rgba(8, 11, 18, 0.74));
+        }
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 30px;
+            color: #f9e3a4;
+        }
+        .banner-content h2 {
+            font-size: 34px;
+            margin: 0;
+            letter-spacing: 0.08em;
+            text-shadow: 0 10px 18px rgba(0, 0, 0, 0.55);
+        }
+        .banner-content p {
+            margin: 18px auto 0;
+            font-size: 18px;
+            max-width: 760px;
+            color: rgba(249, 227, 164, 0.95);
+            line-height: 1.7;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #0f1622 0%, #0a0e17 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .contract-address {
+            margin-top: 28px;
+            padding: 16px 24px;
+            font-size: 13px;
+            color: #a89968;
+            background: rgba(15, 22, 34, 0.6);
+            border: 1px solid #3a4a62;
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 150ms ease;
+        }
+        .contract-address:hover {
+            border-color: #c6a33f;
+            background-color: rgba(15, 22, 34, 0.8);
+            color: #f5d777;
+        }
+        .ca-address-text {
+            cursor: pointer;
+            transition: color 150ms ease;
+        }
+        .ca-address-text:hover {
+            color: #f5d777;
+        }
+        .all-donations-list {
+            text-align: left;
+            padding: 12px 0;
+            color: #d8cca1;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .all-donations-list p {
+            margin: 0;
+            padding: 4px 0;
+        }
+        .contract-address strong {
+            color: #f5d777;
+            font-weight: 700;
+        }
+        .hero h1 {
+            font-size: 48px;
+            color: #f5d777;
+            margin: 0 0 24px;
+            max-width: 860px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 19px;
+            max-width: 760px;
+            margin: 0 auto 30px;
+            color: #e1cea1;
+        }
+        .token-chip {
+            display: inline-block;
+            padding: 12px 18px;
+            background-color: #2f321c;
+            color: #f7e4a7;
+            border: 1px solid #7c6a2c;
+            border-radius: 999px;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+            margin-bottom: 16px;
+        }
+        section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 40px;
+            color: #f5d777;
+            margin-bottom: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        p {
+            font-size: 17px;
+            max-width: 720px;
+            margin: 0 auto;
+            color: #d8cca1;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
+        }
+        ol {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        li {
+            counter-increment: step-counter;
+            margin: 18px 0;
+            font-size: 18px;
+            text-align: left;
+            padding-left: 34px;
+            position: relative;
+            color: #d8cca1;
+        }
+        li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #c6a33f;
+            font-weight: bold;
+        }
+        .buy {
+            background: linear-gradient(180deg, #0a0e17 0%, #0f1622 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .values {
+            background: linear-gradient(180deg, #0f1622 0%, #0a0e17 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .mission {
+            background: linear-gradient(180deg, #0a0e17 0%, #0f1622 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .how-it-works {
+            background: linear-gradient(180deg, #0f1622 0%, #0a0e17 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .disclaimer {
+            background: linear-gradient(180deg, rgba(15, 19, 33, 0.8) 0%, rgba(10, 14, 23, 0.8) 100%);
+            border: 1px solid #29354a;
+            padding: 60px 40px;
+            text-align: left;
+            color: #c9c09a;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 16px;
+        }
+        .disclaimer h2 {
+            color: #f5d677;
+            margin-bottom: 16px;
+        }
+        .disclaimer p {
+            max-width: 860px;
+            margin: 0 auto 16px;
+            line-height: 1.7;
+        }
+        .founder {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #0f1622 0%, #0a0e17 100%);
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .founder-image {
+            max-width: 420px;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #3b4a61;
+            box-shadow: 0 22px 45px rgba(0, 0, 0, 0.24);
+        }
+        .founder-image img {
+            width: 100%;
+            display: block;
+        }
+        .founder-content {
+            max-width: 540px;
+        }
+        .founder-content h2 {
+            color: #f5d677;
+            margin-top: 0;
+        }
+        .founder-content p {
+            color: #d2c199;
+            line-height: 1.8;
+        }
+        .portfolio {
+            flex: 0 1 420px;
+            text-align: left;
+        }
+        .portfolio h3 {
+            color: #f5d777;
+            font-size: 20px;
+            margin-top: 0 0 16px 0;
+        }
+        .portfolio-items {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .donations-section {
+            flex: 0 1 420px;
+            text-align: left;
+        }
+        .donations-section h3 {
+            color: #f5d777;
+            font-size: 20px;
+            margin-top: 0 0 16px 0;
+        }
+        .donation-tracker {
+            padding: 16px;
+            background-color: #0d1219;
+            border-radius: 12px;
+            border: 1px solid #2a3b4d;
+            margin-bottom: 16px;
+        }
+        .donation-tracker-link {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            background: linear-gradient(135deg, #c6a33f 0%, #ae8c1b 100%);
+            color: #11101a;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 150ms ease;
+        }
+        .donation-tracker-link:hover {
+            background: linear-gradient(135deg, #d4b34a 0%, #a8821a 100%);
+        }
+        .recent-donation {
+            background: linear-gradient(135deg, rgba(198, 163, 63, 0.1), rgba(174, 140, 27, 0.05));
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #c6a33f;
+            margin-bottom: 12px;
+        }
+        .recent-donation-label {
+            font-size: 11px;
+            color: #c6a33f;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .donation-item {
+            padding: 10px;
+            background-color: #111827;
+            border-radius: 8px;
+            border-left: 3px solid #c6a33f;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .donation-item-name {
+            color: #f5d777;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .donation-item-details {
+            color: #a89968;
+            font-size: 11px;
+        }
+        .donate-crypto-section {
+            margin-top: 16px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(198, 163, 63, 0.08), rgba(174, 140, 27, 0.03));
+            border-radius: 8px;
+            border: 1px solid #3a4a62;
+        }
+        .donate-crypto-label {
+            font-size: 12px;
+            color: #c6a33f;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .wallet-address-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .wallet-address {
+            flex: 1;
+            padding: 10px 12px;
+            background-color: #111827;
+            border: 1px solid #2a3b4d;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #f5d777;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            transition: all 150ms ease;
+            word-break: break-all;
+        }
+        .wallet-address:hover {
+            border-color: #c6a33f;
+            background-color: #131a28;
+            color: #f8d05f;
+        }
+        .wallet-address.copied {
+            border-color: #4caf50;
+            color: #4caf50;
+        }
+        .tip-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 12px;
+            background: linear-gradient(135deg, rgba(198, 163, 63, 0.15), rgba(174, 140, 27, 0.1));
+            color: #c6a33f;
+            border: 1px solid #c6a33f;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 150ms ease;
+        }
+        .tip-button:hover {
+            background: linear-gradient(135deg, rgba(198, 163, 63, 0.25), rgba(174, 140, 27, 0.2));
+            border-color: #d4b34a;
+        }
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px;
+            background-color: #0d1219;
+            border-radius: 12px;
+            border: 1px solid #2a3b4d;
+        }
+        .portfolio-item-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            object-fit: contain;
+            background-color: #111827;
+            padding: 4px;
+        }
+        .portfolio-item-text {
+            flex: 1;
+        }
+        .portfolio-item-text p {
+            margin: 0;
+            font-size: 14px;
+            color: #c8bf9d;
+        }
+        .footer {
+            margin: 60px auto 40px;
+            max-width: 1200px;
+            border-radius: 16px;
+            padding: 40px;
+            background: linear-gradient(180deg, #111827 0%, #0f1622 100%);
+            color: #c8bf9d;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid #1a2332;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 15px;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .footer-logo {
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu li {
+            list-style: none;
+        }
+        .nav-menu a {
+            color: #d8cca1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 180ms ease;
+        }
+        .nav-menu a:hover {
+            color: #f5d777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://images.pump.fun/coin-image/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump?variant=600x600&ipfs=bafybeiaycy25egel4nqaotzjysr2lwyovnaxb4yr6ycwoq73gaorws7rhy&src=https%3A%2F%2Fipfs.io%2Fipfs%2Fbafybeiaycy25egel4nqaotzjysr2lwyovnaxb4yr6ycwoq73gaorws7rhy" alt="FFSWF logo" class="logo-image">
+            <div class="brand">FFSWF</div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#legacy">Legacy</a></li>
+                <li><a href="#join">Join FFSWF</a></li>
+            </ul>
+        </nav>
+        <a class="request-access" href="https://pump.fun/coin/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump" target="_blank" rel="noopener noreferrer">Join FFSWF</a>
+    </header>
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Revolutionary Family Wealth Drive</h2>
+            <h3 style="font-size: 26px; margin: 12px 0; color: #f5d777;">FFSWF — A Golden Legacy of Shared Family Wealth</h3>
+            <p>Join the revolution. Bring your savings into the reserve and preserve the value for your children, grandchildren, and generations to come.</p>
+        </div>
+    </section>
+    <section class="hero">
+        <span class="token-chip">Token: FFSWF</span>
+        <h1>Welcome to FFSWF — A Family Savings Revolution</h1>
+        <p>FFSWF is a shared savings movement where family members bring their wealth together into a reserve for children, grandchildren, and the generations ahead. This is not an investment in the traditional sense — it is a collective preservation of family value.</p>
+        <a class="buy-link" href="https://pump.fun/coin/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump" target="_blank" rel="noopener noreferrer">Join FFSWF</a>
+    </section>
+    <section class="founder">
+        <div class="founder-image">
+            <img src="https://i.pinimg.com/736x/12/b0/08/12b008f30cb8c30284528fdc8601c686.jpg" alt="Founding grandfather" />
+        </div>
+        <div class="founder-content">
+            <h2>Remembering Our Founder</h2>
+            <p>This is the grandfather who started FFSWF. His vision was to bring the family and friends together with a shared savings reserve, preserving wealth from different investments for future generations.</p>
+            <p>FFSWF is built on his legacy of unity, responsibility, and long-term value. Every token and every member honors the wealth reserve he began.</p>
+        </div>
+        <div class="portfolio">
+            <h3>Investment Portfolio</h3>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="https://klever.org/wp-content/uploads/2024/09/Primary-dark-300x76.png" alt="Kleverchain" class="portfolio-item-logo" />
+                    <div class="portfolio-item-text">
+                        <p><strong>Kleverchain Ecosystem</strong></p>
+                        <p style="font-size: 12px; color: #9d9575;">Crypto Tokens and Infrastructure</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://storage.investagrams.com/files/Stock/DP/148.png" alt="DITO" class="portfolio-item-logo" />
+                    <div class="portfolio-item-text">
+                        <p><strong>DITO Stocks</strong></p>
+                        <p style="font-size: 12px; color: #9d9575;">Equities</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://static.wixstatic.com/media/123e86_316ce87b60494f07a5541a47f8cc27dc~mv2_d_5216_2721_s_4_2.png/v1/fill/w_153,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/123e86_316ce87b60494f07a5541a47f8cc27dc~mv2_d_5216_2721_s_4_2.png" alt="Ionics" class="portfolio-item-logo" />
+                    <div class="portfolio-item-text">
+                        <p><strong>Ionics Stocks</strong></p>
+                        <p style="font-size: 12px; color: #9d9575;">Equities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="donations-section">
+            <h3>Donated Crypto to the Fund</h3>
+            <div class="donation-tracker">
+                <a href="https://solscan.io/account/5t67hr7oKGfd69kUfFUw2xXSwKHYo79jZmD7bYhQFTKN" target="_blank" rel="noopener noreferrer" class="donation-tracker-link">View on Solana Explorer</a>
+                <div class="recent-donation">
+                    <div class="recent-donation-label">Recently Donated</div>
+                    <div class="donation-item">
+                        <div class="donation-item-name">FFSWF Tokens</div>
+                        <div class="donation-item-details">60.49M FFSWF • 2 days ago</div>
+                    </div>
+                </div>
+                <div class="donate-crypto-section">
+                    <span class="donate-crypto-label">Donate Crypto</span>
+                    <div class="wallet-address-box">
+                        <div class="wallet-address" id="walletAddress" onclick="copyFundWallet()" title="Click to copy fund wallet address">5t67hr7oKGfd69kUfFUw2xXSwKHYo79jZmD7bYhQFTKN</div>
+                    </div>
+                    <button class="tip-button" onclick="window.open('https://solscan.io/account/5t67hr7oKGfd69kUfFUw2xXSwKHYo79jZmD7bYhQFTKN', '_blank')">💰 Tip</button>
+                </div>
+                <p style="color: #a89968; font-size: 13px; margin-top: 16px; margin-bottom: 12px; font-weight: 600;">All Donations:</p>
+                <div class="all-donations-list">
+                    <p>• Wallet portfolio scanned from Solana Explorer</p>
+                    <p>• FFSWF token excluded from this list</p>
+                    <p>• No additional tokens currently visible in the fund wallet portfolio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mission" id="mission">
+        <h2>Our Mission</h2>
+        <p>FFSWF empowers families and friends to unite their savings, bring their wealth together, and create a shared reserve for the next generation. This is a revolutionary savings movement built on trust, purpose, and long-term value for everyone we care about.</p>
+    </section>
+    <section class="how-it-works" id="how-it-works">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Family and friends bring their savings and wealth into one shared reserve.</li>
+            <li>The reserve preserves value and passes it forward as a legacy for the next generation.</li>
+            <li>FFSWF represents that collective wealth, unity, and the revolution in shared savings.</li>
+        </ol>
+    </section>
+    <section class="values" id="legacy">
+        <h2>Legacy of Value</h2>
+        <p>FFSWF is a movement for families and friends who want to save together and leave a lasting legacy. It is a collective reserve of saved wealth made stronger by every household and individual that joins.</p>
+    </section>
+    <section class="buy" id="join">
+        <h2>Join FFSWF</h2>
+        <p>FFSWF is a shared wealth reserve for families and friends who want to save together. Everyone can join, bring their wealth into the reserve, and save that value for the next generation.</p>
+        <a class="buy-link" href="https://pump.fun/coin/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump" target="_blank" rel="noopener noreferrer">Join FFSWF</a>
+        <p class="contract-address" id="caAddress" onclick="copyCAToClipboard()" title="Click to copy"><strong>CA:</strong> <span class="ca-address-text">GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump</span></p>
+    </section>
+    <section class="disclaimer">
+        <h2>Compliance Notice</h2>
+        <p>This site is intended to describe a shared family wealth reserve and should not be interpreted as an investment offer. In accordance with global compliance principles and SEC-style guidance, this content is provided for informational purposes only and is not financial advice.</p>
+        <p>FFSWF reflects the collective savings and value of our family and friends. It is presented here for transparency, legacy planning, and shared purpose, not as a securities offering.</p>
+    </section>
+    <footer class="footer">
+        <p>Powered by <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png" alt="Solana" class="footer-logo" style="height: 18px;" /> Solana and <img src="https://play-lh.googleusercontent.com/38AumHMi-kqROWOkerx9qhrNhEtgfu12mqfYSrUizzYd_9cf3h8l4ngNLOT3IEzC2K0=w240-h480-rw" alt="Pump.Fun" class="footer-logo" style="height: 20px; border-radius: 4px;" /> Pump.Fun</p>
+    </footer>
+    <script>
+        function copyToClipboard() {
+            const walletAddress = '5t67hr7oKGfd69kUfFUw2xXSwKHYo79jZmD7bYhQFTKN';
+            navigator.clipboard.writeText(walletAddress).then(() => {
+                const walletEl = document.getElementById('walletAddress');
+                const originalText = walletEl.textContent;
+                walletEl.textContent = 'Copied!';
+                walletEl.classList.add('copied');
+                setTimeout(() => {
+                    walletEl.textContent = originalText;
+                    walletEl.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                const textArea = document.createElement('textarea');
+                textArea.value = walletAddress;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                const walletEl = document.getElementById('walletAddress');
+                const originalText = walletEl.textContent;
+                walletEl.textContent = 'Copied!';
+                walletEl.classList.add('copied');
+                setTimeout(() => {
+                    walletEl.textContent = originalText;
+                    walletEl.classList.remove('copied');
+                }, 2000);
+            });
+        }
+        
+        function copyFundWallet() {
+            copyToClipboard();
+        }
+        
+        function copyCAToClipboard() {
+            const caAddress = 'GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump';
+            navigator.clipboard.writeText(caAddress).then(() => {
+                const caElement = document.getElementById('caAddress');
+                const originalHTML = caElement.innerHTML;
+                caElement.innerHTML = '<strong>✓ Copied to clipboard!</strong>';
+                caElement.style.borderColor = '#4caf50';
+                caElement.style.color = '#4caf50';
+                setTimeout(() => {
+                    caElement.innerHTML = originalHTML;
+                    caElement.style.borderColor = '#3a4a62';
+                    caElement.style.color = '#a89968';
+                }, 2000);
+            }).catch(() => {
+                const textArea = document.createElement('textarea');
+                textArea.value = caAddress;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                const caElement = document.getElementById('caAddress');
+                const originalHTML = caElement.innerHTML;
+                caElement.innerHTML = '<strong>✓ Copied to clipboard!</strong>';
+                caElement.style.borderColor = '#4caf50';
+                caElement.style.color = '#4caf50';
+                setTimeout(() => {
+                    caElement.innerHTML = originalHTML;
+                    caElement.style.borderColor = '#3a4a62';
+                    caElement.style.color = '#a89968';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
