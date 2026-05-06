@@ -469,6 +469,71 @@
             font-size: 14px;
             color: #c8bf9d;
         }
+        a.portfolio-item,
+        a.charity-item,
+        .donation-tracker-link,
+        .request-access,
+        .buy-link,
+        .nav-menu a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .charity-section {
+            margin-top: 32px;
+            padding: 24px;
+            background: linear-gradient(180deg, rgba(15, 22, 34, 0.9), rgba(10, 14, 23, 0.95));
+            border: 1px solid #2e3c52;
+            border-radius: 18px;
+        }
+        .charity-section h3 {
+            margin: 0 0 16px;
+            color: #f5d777;
+            font-size: 22px;
+        }
+        .charity-section p {
+            margin: 0 0 20px;
+            color: #d8cca1;
+            max-width: 700px;
+        }
+        .charity-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: flex-start;
+        }
+        .charity-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1 1 280px;
+            padding: 16px 18px;
+            border: 1px solid #3a4a62;
+            border-radius: 14px;
+            background: rgba(16, 20, 31, 0.88);
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        }
+        .charity-item:hover {
+            transform: translateY(-2px);
+            border-color: #c6a33f;
+            background: rgba(22, 29, 47, 0.96);
+        }
+        .charity-item-logo {
+            width: 58px;
+            height: 58px;
+            border-radius: 12px;
+            object-fit: contain;
+            background-color: #111827;
+            padding: 8px;
+        }
+        .charity-item-text {
+            flex: 1;
+            text-align: left;
+        }
+        .charity-item-text p {
+            margin: 4px 0 0;
+            font-size: 13px;
+            color: #b8ac82;
+        }
         .footer {
             margin: 60px auto 40px;
             max-width: 1200px;
@@ -534,15 +599,15 @@
     </header>
     <section class="banner">
         <div class="banner-content">
-            <h2>Revolutionary Family Wealth Drive</h2>
-            <h3 style="font-size: 26px; margin: 12px 0; color: #f5d777;">FFSWF — A Golden Legacy of Shared Family Wealth</h3>
-            <p>Join the revolution. Bring your savings into the reserve and preserve the value for your children, grandchildren, and generations to come.</p>
+            <h2>Family Wealth, Reimagined</h2>
+            <h3 style="font-size: 26px; margin: 12px 0; color: #f5d777;">FFSWF — A shared savings reserve for future generations</h3>
+            <p>Build a structured family reserve and protect value across generations with a modern, trusted savings framework.</p>
         </div>
     </section>
     <section class="hero">
         <span class="token-chip">Token: FFSWF</span>
         <h1>Welcome to FFSWF — A Family Savings Revolution</h1>
-        <p>FFSWF is a shared savings movement where family members bring their wealth together into a reserve for children, grandchildren, and the generations ahead. This is not an investment in the traditional sense — it is a collective preservation of family value.</p>
+        <p>FFSWF brings family and friends together to pool savings into a reserve designed to protect value for children, grandchildren, and generations ahead. It is a collective legacy framework rather than a traditional investment.</p>
         <a class="buy-link" href="https://pump.fun/coin/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump" target="_blank" rel="noopener noreferrer">Join FFSWF</a>
     </section>
     <section class="founder">
@@ -551,8 +616,8 @@
         </div>
         <div class="founder-content">
             <h2>Remembering Our Founder</h2>
-            <p>This is the grandfather who started FFSWF. His vision was to bring the family and friends together with a shared savings reserve, preserving wealth from different investments for future generations.</p>
-            <p>FFSWF is built on his legacy of unity, responsibility, and long-term value. Every token and every member honors the wealth reserve he began.</p>
+            <p>This is the grandfather who inspired FFSWF. His vision was to bring family and friends together with a shared savings reserve, preserving blended wealth for future generations.</p>
+            <p>FFSWF is built on that legacy of unity, responsibility, and long-term value. Every token and every member represents the reserve he began.</p>
         </div>
         <div class="portfolio">
             <h3>Investment Portfolio</h3>
@@ -576,6 +641,26 @@
                     <div class="portfolio-item-text">
                         <p><strong>Ionics Stocks</strong></p>
                         <p style="font-size: 12px; color: #9d9575;">Equities</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="charity-section">
+            <h3>60% Creator Rewards Split Between Charity Partners</h3>
+            <p>Sixty percent of creator rewards are allocated to two selected charities, reinforcing our commitment to supporting children and wildlife protection through meaningful contributions.</p>
+            <div class="charity-items">
+                <a class="charity-item" href="https://www.savethechildren.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Save_the_Children_logo.svg/1200px-Save_the_Children_logo.svg.png" alt="Save the Children" class="charity-item-logo" />
+                    <div class="charity-item-text">
+                        <p><strong>Save the Children</strong></p>
+                        <p>Global child advocacy and relief.</p>
+                    </div>
+                </a>
+                <a class="charity-item" href="https://www.wcs.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/WCS_Logo.svg/1200px-WCS_Logo.svg.png" alt="Wildlife Conservation Society" class="charity-item-logo" />
+                    <div class="charity-item-text">
+                        <p><strong>Wildlife Conservation Society</strong></p>
+                        <p>Protecting wildlife and wild places worldwide.</p>
                     </div>
                 </a>
             </div>
@@ -609,30 +694,30 @@
     </section>
     <section class="mission" id="mission">
         <h2>Our Mission</h2>
-        <p>FFSWF empowers families and friends to unite their savings, bring their wealth together, and create a shared reserve for the next generation. This is a revolutionary savings movement built on trust, purpose, and long-term value for everyone we care about.</p>
+        <p>FFSWF empowers families and friends to combine savings and create a shared reserve that supports the next generation. This movement is built on trust, purpose, and long-term preservation of collective value.</p>
     </section>
     <section class="how-it-works" id="how-it-works">
         <h2>How It Works</h2>
         <ol>
-            <li>Family and friends bring their savings and wealth into one shared reserve.</li>
-            <li>The reserve preserves value and passes it forward as a legacy for the next generation.</li>
-            <li>FFSWF represents that collective wealth, unity, and the revolution in shared savings.</li>
+            <li>Members contribute savings into a shared reserve designed for durability and preservation.</li>
+            <li>The reserve protects value and supports a long-term legacy for future generations.</li>
+            <li>FFSWF represents the collective strength of family, friends, and shared financial purpose.</li>
         </ol>
     </section>
     <section class="values" id="legacy">
         <h2>Legacy of Value</h2>
-        <p>FFSWF is a movement for families and friends who want to save together and leave a lasting legacy. It is a collective reserve of saved wealth made stronger by every household and individual that joins.</p>
+        <p>FFSWF is a movement for families and friends who want to save together and leave a lasting legacy. Each contribution strengthens a collective reserve intended to support long-term family prosperity.</p>
     </section>
     <section class="buy" id="join">
         <h2>Join FFSWF</h2>
-        <p>FFSWF is a shared wealth reserve for families and friends who want to save together. Everyone can join, bring their wealth into the reserve, and save that value for the next generation.</p>
+        <p>Join the FFSWF reserve and help build a durable wealth foundation for your family over time. Every member adds strength to the shared legacy.</p>
         <a class="buy-link" href="https://pump.fun/coin/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump" target="_blank" rel="noopener noreferrer">Join FFSWF</a>
         <p class="contract-address" id="caAddress" onclick="copyCAToClipboard()" title="Click to copy"><strong>CA:</strong> <span class="ca-address-text">GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump</span></p>
     </section>
     <section class="disclaimer">
         <h2>Compliance Notice</h2>
-        <p>This site is intended to describe a shared family wealth reserve and should not be interpreted as an investment offer. In accordance with global compliance principles and SEC-style guidance, this content is provided for informational purposes only and is not financial advice.</p>
-        <p>FFSWF reflects the collective savings and value of our family and friends. It is presented here for transparency, legacy planning, and shared purpose, not as a securities offering.</p>
+        <p>This website presents a shared family wealth reserve concept and is not an investment offering. The content is for informational purposes only and does not constitute financial advice or a securities solicitation.</p>
+        <p>FFSWF reflects a collective savings and legacy framework for family and friends. It is shared here for transparency, long-term planning, and community purpose.</p>
     </section>
     <footer class="footer">
         <p>Powered by <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png" alt="Solana" class="footer-logo" style="height: 18px;" /> Solana and <img src="https://play-lh.googleusercontent.com/38AumHMi-kqROWOkerx9qhrNhEtgfu12mqfYSrUizzYd_9cf3h8l4ngNLOT3IEzC2K0=w240-h480-rw" alt="Pump.Fun" class="footer-logo" style="height: 20px; border-radius: 4px;" /> Pump.Fun</p>
