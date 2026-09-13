@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://satoshifan00.github.io/FFSWF/">
     <title>FFSWF Family & Friends Savings and Wealth Fund</title>
     <style>
         body {
@@ -315,9 +316,16 @@
             margin-top: 0 0 16px 0;
         }
         .portfolio-items {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
             gap: 18px;
+            align-items: stretch;
+        }
+        @media (max-width: 800px) {
+            .portfolio-items {
+                grid-template-columns: 1fr;
+            }
         }
         .charity-stats {
             display: flex;
@@ -481,6 +489,8 @@
             align-items: center;
             gap: 16px;
             padding: 14px;
+            height: 100%;
+            box-sizing: border-box;
             background-color: #0d1219;
             border-radius: 12px;
             border: 1px solid #2a3b4d;
@@ -720,10 +730,17 @@
                         <p style="font-size: 12px; color: #9d9575;">Equities</p>
                     </div>
                 </a>
-                <a class="portfolio-item" href="https://www.ionics-ems.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://static.wixstatic.com/media/123e86_316ce87b60494f07a5541a47f8cc27dc~mv2_d_5216_2721_s_4_2.png/v1/fill/w_153,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/123e86_316ce87b60494f07a5541a47f8cc27dc~mv2_d_5216_2721_s_4_2.png" alt="Ionics" class="portfolio-item-logo" />
+                <a class="portfolio-item" href="https://www.alternergy.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://static.wixstatic.com/media/941b16_a3ff7ff738094ef391e3536a8a7c480b~mv2.png/v1/fill/w_245,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Alternergy_Logo_withTagline_v2023_Primary.png" alt="ALTERNERGY" class="portfolio-item-logo" />
                     <div class="portfolio-item-text">
-                        <p><strong>Ionics Stocks</strong></p>
+                        <p><strong>ALTERNERGY Stocks</strong></p>
+                        <p style="font-size: 12px; color: #9d9575;">Equities</p>
+                    </div>
+                </a>
+                <a class="portfolio-item" href="https://xurpasgroup.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://xurpasgroup.com/wp-content/uploads/2024/05/Xurpas-Logo-Blue.png" alt="Xurpas" class="portfolio-item-logo" />
+                    <div class="portfolio-item-text">
+                        <p><strong>XURPAS Stocks</strong></p>
                         <p style="font-size: 12px; color: #9d9575;">Equities</p>
                     </div>
                 </a>
@@ -814,7 +831,7 @@
         <p>FFSWF reflects a collective savings and legacy framework for family and friends. It is shared here for transparency, long-term planning, and community purpose.</p>
     </section>
     <footer class="footer">
-        <p>Powered by <a class="footer-link" href="https://solana.com/" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png" alt="Solana" class="footer-logo" style="height: 18px;" /> Solana</a>, <a class="footer-link" href="https://pump.fun/coin/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump" target="_blank" rel="noopener noreferrer"><img src="https://play-lh.googleusercontent.com/38AumHMi-kqROWOkerx9qhrNhEtgfu12mqfYSrUizzYd_9cf3h8l4ngNLOT3IEzC2K0=w240-h480-rw" alt="Pump.Fun" class="footer-logo" style="height: 20px; border-radius: 4px;" /> Pump.Fun</a>, <a class="footer-link" href="https://solscan.io/" target="_blank" rel="noopener noreferrer"><img src="https://solscan.io/_next/static/media/solscan-logo.0297f978.png" alt="Solscan" class="footer-logo" style="height: 20px; border-radius: 4px;" /> Solscan</a>, and <a class="footer-link" href="https://www.donate.gg/charity-coins" target="_blank" rel="noopener noreferrer"><img src="https://www.donate.gg/dxp.svg?dpl=dpl_41x6wP3ygfALgzJCt6fXZiGwGLG4" alt="donate.GG" class="footer-logo" style="height: 20px;" /> donate.GG</a></p>
+        <p>Powered by <a class="footer-link" href="https://solana.com/" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png" alt="Solana" class="footer-logo" style="height: 18px;" /> Solana</a>, <a class="footer-link" href="https://pump.fun/coin/GD3APMmeuGL57FdjKq1NcTE4zdLPdQtDkaNKvmUzpump" target="_blank" rel="noopener noreferrer"><img src="https://play-lh.googleusercontent.com/38AumHMi-kqROWOkerx9qhrNhEtgfu12mqfYSrUizzYd_9cf3h8l4ngNLOT3IEzC2K0=w240-h480-rw" alt="Pump.Fun" class="footer-logo" style="height: 20px; border-radius: 4px;" /> Pump.Fun</a>, <a class="footer-link" href="https://solscan.io/" target="_blank" rel="noopener noreferrer"><img src="https://solscan.io/_next/static/media/solscan-logo.0297f978.png" alt="Solscan" class="footer-logo" style="height: 20px; border-radius: 4px;" /> Solscan</a>, <a class="footer-link" href="https://www.donate.gg/charity-coins" target="_blank" rel="noopener noreferrer"><img src="https://www.donate.gg/dxp.svg?dpl=dpl_41x6wP3ygfALgzJCt6fXZiGwGLG4" alt="donate.GG" class="footer-logo" style="height: 20px;" /> donate.GG</a>, and <a class="footer-link" href="https://satoshifan00.github.io/FFSWF/" target="_blank" rel="noopener noreferrer">FFSWF GitHub Pages</a></p>
     </footer>
     <script>
         function copyToClipboard() {
